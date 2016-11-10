@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <title>Timer Agency Template</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="css/ionicons.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="css/animate.css">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="css/slider.css">
+        <!-- owl craousel css -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/owl.theme.css">
+        <link rel="stylesheet" href="css/jquery.fancybox.css">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="css/main.css">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="css/responsive.css">
+        
+        <!-- Template Javascript Files
+        ================================================== -->
+        <!-- modernizr js -->
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <!-- jquery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- owl carouserl js -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- bootstrap js -->
+
+        <script src="js/bootstrap.min.js"></script>
+        <!-- wow js -->
+        <script src="js/wow.min.js"></script>
+        <!-- slider js -->
+        <script src="js/slider.js"></script>
+        <script src="js/jquery.fancybox.js"></script>
+        <!-- template main js -->
+        <script src="js/main.js"></script>
+		
+		<script type='text/javascript'>
+function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('output_image');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+<style>
+body
+{
+ width:100%;
+ margin:0 auto;
+ padding:0px;
+ font-family:helvetica;
+ background-color:#0B3861;
+}
+#wrapper
+{
+ text-align:center;
+ margin:0 auto;
+ padding:0px;
+ width:995px;
+}
+#output_image
+{
+ max-width:300px;
+}
+</style>
+		
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+		<!-- Path to your custom app styles-->
+		<link rel="stylesheet"  href="css/jquery.mobile.structure.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.theme.css" />
+         <script>
+			var userAgent = navigator.userAgent + '';
+			if (userAgent.indexOf('iPhone') > -1) {
+				document.write('<script src="js/lib/cordova-iphone.js"></sc' + 'ript>');
+				var mobile_system = 'iphone';
+			} else if (userAgent.indexOf('Android') > -1) {
+				document.write('<script src="js/lib/cordova-android.js"></sc' + 'ript>');
+				var mobile_system = 'android';
+			} else {
+				var mobile_system = '';
+			}
+		</script>
+		
+		
+
+		<script src="scripts/jquery.js"></script>
+		<!-- your scripts here -->
+		
+		<script src="scripts/jquery.mobile.js"></script>
+		
+		<script type="text/javascript">
+ 
+      function fileSelected() {
+ 
+        var count = document.getElementById('fileToUpload').files.length;
+ 
+              document.getElementById('details').innerHTML = "";
+ 
+              for (var index = 0; index < count; index ++)
+ 
+              {
+ 
+                     var file = document.getElementById('fileToUpload').files[index];
+ 
+                     var fileSize = 0;
+ 
+                     if (file.size > 1024 * 1024)
+ 
+                            fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+ 
+                     else
+ 
+                            fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+ 
+                     document.getElementById('details').innerHTML += 'Name: ' + file.name + '<br>Size: ' + fileSize + '<br>Type: ' + file.type;
+ 
+                     document.getElementById('details').innerHTML += '<p>';
+ 
+              }
+ 
+      }
+ 
+      function uploadFile() {
+ 
+        var fd = new FormData();
+ 
+              var count = document.getElementById('fileToUpload').files.length;
+ 
+              for (var index = 0; index < count; index ++)
+ 
+              {
+ 
+                     var file = document.getElementById('fileToUpload').files[index];
+ 
+                     fd.append('myFile', file);
+ 
+              }
+ 
+        var xhr = new XMLHttpRequest();
+ 
+        xhr.upload.addEventListener("progress", uploadProgress, false);
+ 
+        xhr.addEventListener("load", uploadComplete, false);
+ 
+        xhr.addEventListener("error", uploadFailed, false);
+ 
+        xhr.addEventListener("abort", uploadCanceled, false);
+ 
+        xhr.open("POST", "newsfeed.php");
+ 
+        xhr.send(fd);
+ 
+      }
+ 
+      function uploadProgress(evt) {
+ 
+        if (evt.lengthComputable) {
+ 
+          var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+ 
+          document.getElementById('progress').innerHTML = percentComplete.toString() + '%';
+ 
+        }
+ 
+        else {
+ 
+          document.getElementById('progress').innerHTML = 'unable to compute';
+ 
+        }
+ 
+      }
+ 
+      function uploadComplete(evt) {
+ 
+        /* This event is raised when the server send back a response */
+ 
+        alert(evt.target.responseText);
+ 
+      }
+ 
+      function uploadFailed(evt) {
+ 
+        alert("There was an error attempting to upload the file.");
+ 
+      }
+ 
+      function uploadCanceled(evt) {
+ 
+        alert("The upload has been canceled by the user or the browser dropped the connection.");
+ 
+      }
+ 
+    </script>
+ 
+
+ 
+
+    </head>
+    <body>
+					
+  <form id="form1" enctype="multipart/form-data" method="post" action="Upload.aspx">
+ 
+    <div>
+ 
+      <label for="fileToUpload">Take or select photo(s)</label><br />
+ 
+      <input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();" accept="image/*" capture="camera" />
+ 
+    </div>
+ 
+    <div id="details"></div>
+ 
+    <div>
+ 
+      <input type="button" onclick="uploadFile()" value="Upload" />
+ 
+    </div>
+ 
+    <div id="progress"></div>
+ 
+  </form>			
+								<button id="getCurrentlocation">Get Geolocation</button>
+				<div id = "watchlocation"></div>
+				<button id="capturePhoto">CAMERA</button>
+				  <div><center><img class="lazy" style="display:none;width:100%;height:100%;" id="smallImage" src="" /></center></div>
+				  
+				
+				
+                               
+                     
+                    
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<script type="text/javascript" src="cordova.js"></script>
+			<script type="text/javascript" src="scripts/platformOverrides.js"></script>
+			<script type="text/javascript" src="scripts/index.js"></script>
+
+	
+                </body>
+            </html>
+        </html>

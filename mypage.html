@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <title>Timer Agency Template</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="css/ionicons.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="css/animate.css">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="css/slider.css">
+        <!-- owl craousel css -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/owl.theme.css">
+        <link rel="stylesheet" href="css/jquery.fancybox.css">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="css/main.css">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="css/responsive.css">
+        
+        <!-- Template Javascript Files
+        ================================================== -->
+        <!-- modernizr js -->
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <!-- jquery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- owl carouserl js -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- bootstrap js -->
+
+        <script src="js/bootstrap.min.js"></script>
+        <!-- wow js -->
+        <script src="js/wow.min.js"></script>
+        <!-- slider js -->
+        <script src="js/slider.js"></script>
+        <script src="js/jquery.fancybox.js"></script>
+        <!-- template main js -->
+        <script src="js/main.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+		<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    <!-- padding: 8px 8px 8px 32px; -->
+    <!-- text-decoration: none; -->
+    <!-- font-size: 25px; -->
+    <!-- color: #818181; -->
+    <!-- display: block; -->
+    <!-- transition: 0.3s -->
+	padding: 8px 8px 8px 32px;
+	font-size: 20px;
+  line-height: 60px;
+  color:#ff0000;
+  font-weight: 200;
+  margin-bottom: 20px;
+  text-transform: lowercase;
+display: block;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+body{
+  background: 			      #8ac2ef;
+}		
+
+h2 {
+  color:                  #ffffff;
+  text-align:             center;
+  font-size:              40px;
+  font-family:           'Open Sans', sans-serif;
+}
+a {
+  width: 					        86px;
+  height: 				        86px;
+  margin:                 20px auto;
+  background-color: 		  #2196f3;
+  display: 				        block;
+  text-align: 			      center;
+  line-height: 			      86px;
+  color: 					        #FFFFFF;
+  text-decoration:  		  none;
+  font-size: 				      40px;
+  border-radius: 			    50%;
+  -webkit-border-radius: 	50%;
+  -moz-border-radius:    	50%;
+  -webkit-box-shadow: 	  -5px 5px 5px -3px rgba(0,0,0,0.50);
+  -moz-box-shadow: 		    -5px 5px 5px -3px rgba(0,0,0,0.50);
+  box-shadow: 			      -5px 5px 5px -3px rgba(0,0,0,0.50);
+}
+a span {
+  display: 				        block;
+}
+a:hover span{
+  -webkit-animation:      add 0.7s;
+  animation:              add 0.7s;
+}
+
+@-moz-keyframes add {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes add {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes add {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+</style>
+
+		<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+    </head>
+	
+	
+	
+<body>
+<header id="top-bar" class="navbar-fixed-top animated-header">
+            <div class="container">
+                
+                    <!-- /responsive nav button -->
+                    
+                    <!-- logo -->
+                    <!-- <div class="navbar-brand"> -->
+                       <div id="main">
+  <span onclick="openNav()">&#9776;</span>
+</div>	
+                    <!-- </div> -->
+                    <!-- /logo -->
+              
+                <!-- main menu -->
+                
+	<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="account.html">Account</a>
+  <a href="blog-left-sidebar.html">Newsfeed</a>
+  <a href="mypool.html">My Pools</a>
+  <a href="sendmsg.html">Connect!</a>
+</div>
+
+
+                <!-- /main nav -->
+            </div>
+        </header>
+        <div>
+		<div>
+		<div>
+		<h2>Create Pool</h2>	
+<a href="createpool.html"> <span> + </span></a>			
+	</div>
+	<div>
+		<h2>Search & Join!</h2>	
+<a href="joinpool.html"> <span> + </span></a>			
+	</div>
+	<div>
+		<h2>Send message</h2>	
+<a href="sendmsg.html"> <span> + </span></a>			
+	</div>
+	<div>
+		<h2>Newsfeed</h2>	
+<a href="blog-left-sidebar.html"> <span> + </span></a>			
+	</div>
+</div>
+
+</body>
+</html>

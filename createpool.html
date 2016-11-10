@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <title>Ashesi Car-Pool</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="css/ionicons.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="css/animate.css">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="css/slider.css">
+        <!-- owl craousel css -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/owl.theme.css">
+        <link rel="stylesheet" href="css/jquery.fancybox.css">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="css/main.css">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="css/responsive.css">
+        
+        <!-- Template Javascript Files
+        ================================================== -->
+        <!-- modernizr js -->
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <!-- jquery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- owl carouserl js -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- bootstrap js -->
+
+        <script src="js/bootstrap.min.js"></script>
+        <!-- wow js -->
+        <script src="js/wow.min.js"></script>
+        <!-- slider js -->
+        <script src="js/slider.js"></script>
+        <script src="js/jquery.fancybox.js"></script>
+        <!-- template main js -->
+        <script src="js/main.js"></script>		
+	
+<script>
+
+function createPoolComplete(xhr,status){
+				var log = $.parseJSON(xhr.responseText);
+				if(log.message=="success"){
+				<!-- var log = $.parseJSON(xhr.responseText); -->
+				<!-- alert("Thank you for Registering with us! you can login now"); -->
+				console.log(log.status);
+				window.location = "mypool.html";
+				return;
+				}
+				
+				else if(log.message=="failed"){				
+				<!-- alert("Hey! You alreay have an account! you can login with us");  -->
+				window.location = "createpool.html"; 
+				return;
+				}			
+			}
+			
+			
+function createPool(){
+var username=$("#username").val();
+var ltime=$("#ltime").val();
+var dtime=$("#dtime").val();
+var savail=$("#savail").val();
+var fare=$("#fare").val();
+var mobile=$("#mobile").val();
+var text=$("#text").val();
+var dataString="createpool.php?cmd=1&ltime="+ltime+"&dtime="+dtime+"&mobile="+mobile+"&fare="+fare+"&savail="+savail+"&username="+username+"&text="+text+"&create=";
+			prompt('pool has been added', dataString);
+
+$.ajax(dataString,
+					{async:true,complete:createPoolComplete}
+					);
+					
+<!-- } -->
+<!-- else -->
+<!-- alert("wrong format"); -->
+}
+
+
+</script>
+	
+	
+    </head>
+	
+<body>
+    
+    
+
+   <div class="container">
+    	<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="#" class="active" id="register-form-link">Create New Pool</a>
+							</div>
+							
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+									<form action = "" id="registerform" role="form" style="display: block;" >
+
+									<div class="form-group">
+									<div>Username:</div>
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value=""/>
+									</div>
+									<div class="form-group">
+									<div>Loading Time:</div>
+										<input type="datetime-local" name="ltime" id="ltime" tabindex="1" class="form-control" placeholder="Loading Time" value="2013-10-24T20:36:20"/>
+									</div>
+									<div class="form-group">
+									<div>Departure Time </div>
+										<input type="datetime-local" name="dtime" id="dtime" tabindex="1" class="form-control" placeholder="Departure Time" value="2013-10-24T20:36:55"/>
+									</div>
+									<div class="form-group">
+									<div>Space available:</div>
+										<input type="number" name="savail" id="savail" tabindex="1" class="form-control" placeholder="Space available" value=""/>
+									</div>
+									<div class="form-group">
+									<div>Fare in GHS:</div>
+									<input type="number" name="fare" id="fare" tabindex="1" class="form-control" placeholder="Fare in GHS" value="">
+									</div>
+									<div class="form-group">
+									<div>Mobile number:</div>
+										<input type="telephone" name="mobile" id="mobile" tabindex="2" class="form-control" placeholder="Mobile Number" value="">
+									</div>
+									<div class="form-group">
+									<div>Extra Information:</div>
+										<input type="textarea" name="text" id="text" tabindex="2" class="form-control" placeholder="Please input any extra information that you wish your members should know" value="">
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<button tabindex="4" class="form-control btn btn-register"  onclick = "createPool()" value ="Create" >Create</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+                   
+</body>
+
+</html>
+
+
+
+
+
+
